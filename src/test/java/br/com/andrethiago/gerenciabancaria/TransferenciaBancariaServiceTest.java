@@ -19,7 +19,7 @@ public class TransferenciaBancariaServiceTest {
 	public ExpectedException excecaoEsperada = ExpectedException.none();
 
 	@Test(expected = SaldoInsuficienteException.class)
-	public void transferenciaImpossivelSaldoInsuficienteDeveLancarExcecao_old() {
+	public void transferenciaImpossivelSaldoInsuficienteDeveLancarExcecaoComExpected() {
 		ContaBancaria origem = new ContaBancaria("CONTA-A", BigDecimal.valueOf(1500l));
 		ContaBancaria destino = new ContaBancaria("CONTA-B", BigDecimal.valueOf(500l));
 
@@ -27,7 +27,7 @@ public class TransferenciaBancariaServiceTest {
 	}
 
 	@Test
-	public void transferenciaImpossivelSaldoInsuficienteDeveLancarExcecao_old2() {
+	public void transferenciaImpossivelSaldoInsuficienteDeveLancarExcecaoComTryCatch() {
 		ContaBancaria origem = new ContaBancaria("CONTA-A", BigDecimal.valueOf(1500l));
 		ContaBancaria destino = new ContaBancaria("CONTA-B", BigDecimal.valueOf(500l));
 
@@ -40,7 +40,7 @@ public class TransferenciaBancariaServiceTest {
 	}
 
 	@Test
-	public void transferenciaImpossivelSaldoInsuficienteDeveLancarExcecao() {
+	public void transferenciaImpossivelSaldoInsuficienteDeveLancarExcecaoComTestRules() {
 		ContaBancaria origem = new ContaBancaria("CONTA-A", BigDecimal.valueOf(1500l));
 		ContaBancaria destino = new ContaBancaria("CONTA-B", BigDecimal.valueOf(500l));
 
